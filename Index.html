@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Privacy Policy - Torn Chain Panel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { background:#111; color:#eee; font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI; padding: 24px; max-width: 900px; margin:auto; line-height:1.5; }
+    h1, h2 { color:#5aa9ff; }
+    a { color:#88cfff; text-decoration: none; }
+    code { background:#222; padding:2px 4px; border-radius:3px; }
+    section { margin-bottom: 24px; }
+    .small { font-size:0.9em; color:#999; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="small">Last updated: August 2025</p>
+
+  <section>
+    <h2>1. Overview</h2>
+    <p>Torn Chain Panel helps authorized Torn players fetch and manage chain numbers with alerts and faction queue control. This policy explains what user data is collected, how it is used, and how you can control it.</p>
+  </section>
+
+  <section>
+    <h2>2. Data Collected &amp; Usage</h2>
+    <ul>
+      <li><strong>Verified Torn username:</strong> Stored locally to namespace settings and fetch chain numbers.</li>
+      <li><strong>Authentication credentials:</strong> Admin PIN and authorization token used to protect sensitive functionality. These are stored in <code>localStorage</code> / <code>sessionStorage</code>.</li>
+      <li><strong>Torn API key:</strong> Provided by the user to import faction members via YATA. Used only in-session to query <code>yata.yt</code>; not exfiltrated elsewhere.</li>
+      <li><strong>UI preferences &amp; state:</strong> Volume, alert thresholds, flashing settings, panel position, and queue contents. Stored locally to persist user configuration.</li>
+      <li><strong>Page context:</strong> The extension injects UI into the Torn page. It does not harvest browsing history beyond operating on that page.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Sharing &amp; Third Parties</h2>
+    <p>No user data is sold. External requests (e.g., to YATA or the chain resolution backend) occur only when explicitly initiated by the user (e.g., entering their Torn API key or clicking "Get My #"). Credentials are kept local unless included in those explicit requests.</p>
+  </section>
+
+  <section>
+    <h2>4. Security</h2>
+    <p>Sensitive data is stored in the browser's <code>localStorage</code> or <code>sessionStorage</code>. Admin access is protected by a 4-digit PIN that unlocks per session. Authorization tokens can be validated server-side if configured. All external communication uses HTTPS.</p>
+  </section>
+
+  <section>
+    <h2>5. User Control &amp; Revocation</h2>
+    <p>Users can clear stored data via browser developer tools by removing entries from <code>localStorage</code> or <code>sessionStorage</code>. Authorization can be revoked by invalidating tokens if server-side validation is used.</p>
+  </section>
+
+  <section>
+    <h2>6. Data Minimization</h2>
+    <p>The extension collects only what is necessary for its single purpose: managing chain numbers and related alerts/queue state. It does not collect health, financial, location (beyond normal Torn.com access), or personal communication data.</p>
+  </section>
+
+  <section>
+  <h2>7. Contact</h2>
+  <p>For support or reporting issues: Discord <strong>BuzzC137</strong></p>
+</section>
+
+  <p class="small">By using Torn Chain Panel you acknowledge and agree to this privacy policy.</p>
+</body>
+</html>
+
+
