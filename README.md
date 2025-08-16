@@ -101,5 +101,5 @@ If we materially change this policy, we’ll update the “Last updated” date 
 
 Contact
 
-Questions or deletion requests: buzzc137+privacy@proton.me (example; replace with your real inbox).
+Questions or deletion requests: AstraYokai@proton.me
 Support: Discord BuzzC137.
