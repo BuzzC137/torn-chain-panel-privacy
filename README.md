@@ -2,65 +2,104 @@ Privacy Policy
 
 Last updated: August 2025
 
+Overview
 
----
+Torn Chain Panel is a tool for authorized Torn players to fetch and manage chain numbers with alerts and faction queue control. This policy explains what data the extension processes, when it is sent off your device, and your choices.
 
-1. Overview
+Data We Process
+Stored locally in your browser
 
-Torn Chain Panel helps authorized Torn players fetch and manage chain numbers with alerts and faction queue control. This policy explains what user data is collected, how it is used, and how you can control it.
+Verified Torn username – used to namespace settings and fetch your chain number.
 
+Admin PIN and session unlock state – protects admin features (PIN in localStorage; unlock state in sessionStorage).
 
----
+Authorization token (if you use one) – saved in localStorage to access protected backend routes.
 
-2. Data Collected & Usage
+Optional Torn API key (for YATA import) – you enter it; used only during your session to query yata.yt.
 
-Verified Torn username: Stored locally to namespace settings and fetch chain numbers.
+UI preferences & state – e.g., volume, alert thresholds, flashing settings, panel position, and queue entries you add.
 
-Authentication credentials: Admin PIN and authorization token used to protect sensitive functionality. These are stored in localStorage / sessionStorage.
+Local storage means this data stays on your device and is not uploaded by the extension unless you take an action that requires a network request (examples below).
 
-Torn API key: Provided by the user to import faction members via YATA. Used only in-session to query yata.yt; not exfiltrated elsewhere.
+Sent over the network (only when you trigger an action)
 
-UI preferences & state: Volume, alert thresholds, flashing settings, panel position, and queue contents. Stored locally to persist user configuration.
+Queue / chain requests to our backend at https://tornpanel.online (and subdomains on *.tornpanel.online):
 
-Page context: The extension injects UI into the Torn page. It does not harvest browsing history beyond operating on that page.
+What is sent: your username and the specific action (e.g., enqueue, leave, status).
 
+Purpose: to atomically manage chain positions and return your current status.
 
+Retention: operational logs may contain your username and request metadata. We keep logs only as long as needed for reliability and abuse prevention; current target is ≤30 days. We do not sell, rent, or use this data for advertising or profiling.
 
----
+Optional YATA import from https://yata.yt/api/v1/faction/members/:
 
-3. Sharing & Third Parties
+What is sent: the API key you provide, in the request you initiate.
 
-No user data is sold. External requests (e.g., to YATA or the chain resolution backend) occur only when explicitly initiated by the user (e.g., entering their Torn API key or clicking "Get My #"). Credentials are kept local unless included in those explicit requests.
+Purpose: to fetch faction members for convenience inside the UI.
 
+Retention: the key is not transmitted to our server; it is used client-side to call YATA. We do not store or share it.
 
----
+We do not collect browsing history, Google account information, or unrelated page content. The content script only runs on Torn and TornPanel domains as declared in the extension manifest.
 
-4. Security
+Sharing & Sale
 
-Sensitive data is stored in the browser's localStorage or sessionStorage. Admin access is protected by a 4-digit PIN that unlocks per session. Authorization tokens can be validated server-side if configured. All external communication uses HTTPS.
+We do not sell user data.
 
+We do not share user data with third parties except as required to fulfill your explicit requests (e.g., your YATA call to yata.yt or your chain action to tornpanel.online).
 
----
+We do not use advertising or analytics trackers.
 
-5. User Control & Revocation
+Security
 
-Users can clear stored data via browser developer tools by removing entries from localStorage or sessionStorage. Authorization can be revoked by invalidating tokens if server-side validation is used.
+All network requests use HTTPS.
 
+Sensitive local data (PIN, tokens) live in localStorage/sessionStorage on your device.
 
----
+Admin unlock is session-scoped.
 
-6. Data Minimization
+Server endpoints restrict commands to specific actions and domains.
 
-The extension collects only what is necessary for its single purpose: managing chain numbers and related alerts/queue state. It does not collect health, financial, location (beyond normal Torn.com access), or personal communication data.
+Permissions (and why)
 
+storage – save your local preferences (volume, alerts, PIN, token, queue list).
 
----
+alarms – run timer/alert logic reliably in the background.
 
-7. Contact
+tabs – send queue updates from the service worker to open Torn/TornPanel tabs.
 
-For support or reporting issues: Discord BuzzC137
+Host permissions:
 
+https://www.torn.com/* – inject UI only on Torn, to render the panel.
 
----
+https://tornpanel.online/*, https://*.tornpanel.online/*, https://ui.tornpanel.online/* – talk to the chain backend and bridge script.
 
-By using Torn Chain Panel you acknowledge and agree to this privacy policy.
+(Optional by you) Calls to https://yata.yt/* happen only when you press “Load Members” with your API key.
+
+We do not request activeTab or scripting permissions.
+
+Your Choices & Data Deletion
+
+Clear local data: remove entries via browser developer tools (Application → Local Storage / Session Storage) or uninstall the extension.
+
+Revoke server access: remove/rotate your authorization token; stop using “Get My #” and queue actions.
+
+YATA key: remove it from the UI/session to stop YATA requests.
+
+Server logs: contact us to request deletion; see “Contact” below.
+
+Data Minimization
+
+We collect and transmit only what’s necessary to provide chain queue functionality and optional YATA import. We do not process sensitive categories (health, precise location, financial, etc.).
+
+Children’s Privacy
+
+This extension is intended for general audiences of Torn players and is not directed to children.
+
+Changes to this Policy
+
+If we materially change this policy, we’ll update the “Last updated” date and publish the new version at the same URL.
+
+Contact
+
+Questions or deletion requests: buzzc137+privacy@proton.me (example; replace with your real inbox).
+Support: Discord BuzzC137.
