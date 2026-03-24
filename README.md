@@ -101,5 +101,5 @@ If we materially change this policy, we’ll update the “Last updated” date 
 
 Contact
 
-Questions or deletion requests: AstraYokai@proton.me
+Questions or issues: llsdevsteam@gmail.com
 Support: Discord BuzzC137.
